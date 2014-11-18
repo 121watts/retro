@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 group :test do
   gem "codeclimate-test-reporter", require: nil
   gem "nyan-cat-formatter"
+  gem "shoulda-matchers"
+  gem "rspec-rails", "~> 3.0.0", group: :test
 end 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -44,7 +46,6 @@ end
 
 gem "execjs"
 gem "therubyracer"
-gem "rspec-rails", "~> 3.0.0", group: :test
 gem "faker", group: :development
 gem "better_errors", group: :development
 gem "binding_of_caller", group: :development
