@@ -31,7 +31,8 @@ group :test do
   gem "nyan-cat-formatter"
   gem "shoulda-matchers"
   gem "rspec-rails", "~> 3.0.0"
-  gem "factory_girl_rails", group: :test
+  gem "factory_girl_rails"
+  gem 'capybara'
 end 
 
 group :development do   
