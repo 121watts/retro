@@ -33,6 +33,7 @@ group :test do
   gem "shoulda-matchers"
   gem "rspec-rails", "~> 3.0.0"
   gem "factory_girl_rails", group: :test
+  gem "capybara"
 end 
 
 group :development do   
