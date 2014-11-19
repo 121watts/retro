@@ -25,6 +25,7 @@ gem "execjs"
 gem "therubyracer"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'bcrypt'
 
 group :test do
   gem "codeclimate-test-reporter", require: nil
