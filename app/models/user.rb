@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
       self.encrypted_password = BCrypt::Engine.hash_secret(password, salt)
     end
   end
+
+  def clear_password
+    self.password = nil
+  end
 end
