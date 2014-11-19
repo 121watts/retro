@@ -33,11 +33,13 @@ group :test do
   gem "shoulda-matchers"
   gem "rspec-rails", "~> 3.0.0"
   gem "factory_girl_rails", group: :test
+  gem "capybara"
+  gem "launchy"  
 end 
 
 group :development do   
-  gem "faker", group: :development
-  gem "better_errors", group: :development
-  gem "binding_of_caller", group: :development
+  gem "faker"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
