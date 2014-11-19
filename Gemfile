@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -25,6 +25,7 @@ gem "execjs"
 gem "therubyracer"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'bcrypt'
 
 group :test do
   gem "codeclimate-test-reporter", require: nil
@@ -32,11 +33,13 @@ group :test do
   gem "shoulda-matchers"
   gem "rspec-rails", "~> 3.0.0"
   gem "factory_girl_rails", group: :test
+  gem "capybara"
+  gem "launchy"  
 end 
 
 group :development do   
-  gem "faker", group: :development
-  gem "better_errors", group: :development
-  gem "binding_of_caller", group: :development
+  gem "faker"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
