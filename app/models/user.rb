@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
     user.save
     user
   end
+
+  def has_email_and_phone?
+    self.email && self.phone
+  end
 end
