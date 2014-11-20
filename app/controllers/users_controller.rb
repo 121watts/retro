@@ -10,9 +10,8 @@ class UsersController < ApplicationController
       flash[:color] = "valid"
       redirect_to feels_path
     else
-      flash[:notice] = "Form is invalid" 
-      flash[:color] = "invalid"
-      render "new"
+      #flash.keep(:notice)
+      redirect_to feels_path, notice: "Must include email and phone"
     end
   end
 

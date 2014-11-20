@@ -28,6 +28,13 @@ describe 'first time login' do
 
       expect(page).to_not have_content('Phone')
       expect(current_path).to eq feels_path
-    end 
+    end
+
+    it 'cannot signup with just an email' do
+      fill_in('user[email]', with: "watts@yermahm.com")
+      click_button 'Feel'
+      expect(page).to have_content "Email"
+      expect(page).to have_content "Phone"
+    end
   end
 end
