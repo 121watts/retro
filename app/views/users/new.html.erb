@@ -1,17 +1,19 @@
-<% @page_title = "UserAuth | Signup" %>
-<div class="Sign_Form">
-  <h1>Sign Up</h1>
-  <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
-    <p> Email:</br> <%= f.text_field :email%> </p>
-    <p> Password:</br> <%= f.password_field :password%></p>
-    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
-    <%= f.submit :Signup %>
-  <% end %>
-  <% if @user.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
+<div class="signup_container">
+  <% @page_title = "UserAuth | Signup" %>
+  <div class="Sign_Form large-8 large-centered columns">
+    <h1 class="center_text">Sign Up</h1>
+    <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+      <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retrinos?" %> </p>
+      <p> Password:</br> <%= f.password_field :password, placeholder: "enter 8 character password" %></p>
+      <p> Password Confirmation:</br> <%= f.password_field :password_confirmation, placeholder: "re-enter password" %> </p>
+      <%= f.submit :Signup, class: 'button' %>
     <% end %>
-    </ul>
-  <% end %>
+    <% if @user.errors.any? %>
+      <ul class="Signup_Errors">
+      <% for message_error in @user.errors.full_messages %>
+        <li>* <%= message_error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
 </div>
