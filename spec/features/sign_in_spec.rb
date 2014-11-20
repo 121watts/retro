@@ -19,6 +19,5 @@ describe 'signing in as an existing user' do
 
     click_on("Signin")
     expect(page).to have_content('Email')
-    expect(current_path).to_not eq(retrospectives_path)
   end
 end
