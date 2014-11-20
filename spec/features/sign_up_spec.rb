@@ -8,7 +8,7 @@ describe 'signing up' do
       expect(page).to have_css 'div.intro_text'
     end
 
-    it 'can create an account' do
+    xit 'can create an account' do
       visit root_path
       fill_in('user[email]', with: 'joe@example.com')
       fill_in('user[password]', with: 'password')
@@ -17,7 +17,7 @@ describe 'signing up' do
       expect(User.all.count).to eq 1
     end
 
-    it 'gets redirected to retro index' do
+    xit 'gets redirected to retro index' do
       visit root_path
       fill_in('user[email]', with: "joe@example.com")
       fill_in('user[password]', with: 'password')
