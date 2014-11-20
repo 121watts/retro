@@ -3,17 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email].downcase)
-    if @user && @user.match_password(params[:password])
-      redirect_to(retrospectives_path, notice: 'Logged in successfully.')
-    else
-      flash.now.alert = "Login failed."
-      render action: :new
-    end
+    @user = User.from_omniauth(env['omniauth.auth'])
+    session[:user_id] = @user.id
+
+    redirect_to feels_path
   end
 
   def destroy
-    logout
-    redirect_to(:authors, notice: 'Logged out!')
+    session[:user_id] = nil
+    redirect_to login_path, notice: "Logged out!"
   end
 end
