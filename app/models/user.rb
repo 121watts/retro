@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
 
   EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
- # validates :email, format: { with: EMAIL_FORMAT, on: :update } 
- # validates_uniqueness_of :uid
+  validates :email, format: { with: EMAIL_FORMAT, on: :update } 
+  validates_uniqueness_of :uid
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
