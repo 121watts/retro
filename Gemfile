@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.1.2'
+
 gem 'rails', '4.1.6'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -13,6 +14,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "execjs"
 gem "therubyracer"
 gem 'bcrypt'
+gem 'foundation-rails'
+
 
 group :development, :test do
   gem 'pry'
@@ -32,6 +35,4 @@ group :development do
   gem 'spring'
   gem "faker"
   gem "better_errors"
-  gem "binding_of_caller"
 end
-
