@@ -3,12 +3,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
+  def update
+    @user = User.find(params[:id])
+    if @user.update
       flash[:notice] = "You're all signed up"
       flash[:color] = "valid"
-      redirect_to retrospectives_path
+      redirect_to feels_path
     else
       flash[:notice] = "Form is invalid" 
       flash[:color] = "invalid"
@@ -17,6 +17,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email)
   end
 end

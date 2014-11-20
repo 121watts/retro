@@ -15,7 +15,9 @@ gem "execjs"
 gem "therubyracer"
 gem 'bcrypt'
 gem 'foundation-rails'
-
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
@@ -35,4 +37,5 @@ group :development do
   gem 'spring'
   gem "faker"
   gem "better_errors"
+  gem 'binding_of_caller'
 end
