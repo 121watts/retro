@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save :format_phone
   has_many :feels
 
   EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
@@ -20,6 +21,12 @@ class User < ActiveRecord::Base
     user.uid = auth["uid"]
     user.save
     user
+  end
+  
+  def format_values
+    if self.phone
+      self.phone.gsub(/[^0-9]/, '')
+    end
   end
 
   def has_email_and_phone?
