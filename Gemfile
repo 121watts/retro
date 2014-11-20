@@ -14,6 +14,10 @@ gem "execjs"
 gem "therubyracer"
 gem 'bcrypt'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :test do
   gem "codeclimate-test-reporter", require: nil
   gem "nyan-cat-formatter"
