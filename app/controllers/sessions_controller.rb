@@ -5,11 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = @user.id
-    if @user.email != nil
-      redirect_to complaints_path
-    else
-      redirect_to user_path(@user.id)
-    end
+    redirect_to feels_path
   end
 
   def destroy
