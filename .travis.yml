@@ -3,3 +3,4 @@ rvm:
   - 2.1.2
 before_script:
   - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database retro_test;' -U postgres
