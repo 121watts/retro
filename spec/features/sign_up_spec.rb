@@ -23,7 +23,7 @@ describe 'signing up' do
       fill_in('user[password]', with: 'password')
 
       click_on("Signup")
-      expect(current_path).to eq retrospectives_path
+      expect(current_path).to eq feels_path
     end
   end
 end

@@ -9,7 +9,7 @@ describe 'signing in as an existing user' do
     fill_in('password', with: 'password')
 
     click_on("Signin")
-    expect(current_path).to eq retrospectives_path
+    expect(current_path).to eq feels_path
   end
 
   it 'cannot log in with invalid credentials' do

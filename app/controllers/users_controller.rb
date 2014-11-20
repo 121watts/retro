@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You're all signed up"
       flash[:color] = "valid"
-      redirect_to retrospectives_path
+      redirect_to feels_path
     else
-      flash[:notice] = "Form is invalid" 
+      flash[:notice] = "Form is invalid"
       flash[:color] = "invalid"
       render "new"
     end
