@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create]
-  resources :feels, only: [:index]
+  resources :users, except: :index
+  resources :feels, only: [:index, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'signin'  => 'sessions#new'
