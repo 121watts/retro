@@ -35,6 +35,37 @@ describe 'first time login' do
       click_button 'Feel'
       expect(page).to have_content "Email"
       expect(page).to have_content "Phone"
+      expect(User.last.email).to eq nil
+      expect(User.last.phone).to eq nil
+    end
+
+    it 'cannot signup with just a phone' do
+      fill_in('user[phone]', with: "1234567891")
+      click_button 'Feel'
+      expect(page).to have_content "Email"
+      expect(page).to have_content "Phone"
+      expect(User.last.email).to eq nil
+      expect(User.last.phone).to eq nil
+    end
+
+    it 'cannot signup with an invalid email' do
+      fill_in('user[email]', with: "watts@ye")
+      fill_in('user[phone]', with: "122344569")
+      click_button 'Feel'
+      expect(page).to have_content "Email"
+      expect(page).to have_content "Phone"
+      expect(User.last.email).to eq nil
+      expect(User.last.phone).to eq nil
+    end
+
+    it 'cannot signup with an invalid phone' do
+      fill_in('user[email]', with: "watts@yes.com")
+      fill_in('user[phone]', with: "1223fkjasdfh")
+      click_button 'Feel'
+      expect(page).to have_content "Email"
+      expect(page).to have_content "Phone"
+      expect(User.last.email).to eq nil
+      expect(User.last.phone).to eq nil
     end
   end
 end

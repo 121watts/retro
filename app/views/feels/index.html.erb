@@ -1,5 +1,4 @@
 <h1>Welcome to tinyRetro</h1>
-
 <%if !current_user.has_email_and_phone? %>
   <%= form_for(@user) do |f| %>
     <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retrinos?" %> </p>
