@@ -26,10 +26,10 @@ nav.top_bar_color{
   color: white;
 }
 .intro_headline {
-  font-size: 5em;
+  font-size: 6em;
   padding-top: 14%;
   margin-bottom: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Cedarville Cursive', cursive;
 }
 
 .intro_subheadline {
@@ -44,11 +44,11 @@ nav.top_bar_color{
 }
 
 .logo_section h2 {
-  font-size: 2em;
+  font-size: 3em;
   padding-top: 5%;
   margin: 0;
 }
 
 @media (max-width: 600px ) {
-  .intro_headline { font-size: 2em; }
+  .intro_headline { font-size: 3em; }
 }

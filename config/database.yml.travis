@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: retro_test
+  username: postgres
