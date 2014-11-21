@@ -1,11 +1,7 @@
 describe 'returning user' do
   before(:each) do
     login_as_returning_user
-    binding.pry
-    user = User.find(User.last.id)
-    user.email = "j@j.com"
-    user.phone = "3031112222"
-    binding.pry
+    User.find(User.last.id)
   end  
 
   it 'should not be promted for email and phone' do    
