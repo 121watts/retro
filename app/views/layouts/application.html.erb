@@ -16,6 +16,9 @@
 
   <body>
     <%= render partial: 'layouts/navbar' %>
+    <%= render "layouts/flash" %>
+
+
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

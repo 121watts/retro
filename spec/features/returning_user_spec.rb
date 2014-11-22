@@ -1,11 +1,12 @@
 describe 'returning user' do
   before(:each) do
     login_as_returning_user
-  end  
+    User.find(User.last.id)
+  end
 
-  it 'should not be promted for email and phone' do    
+  it 'should not be prompted for email and phone' do
     visit feels_path
-    expect(page).to_not have_content "Phone"    
+    expect(page).to_not have_content "Phone"
   end
 
   it 'should be able to logout' do

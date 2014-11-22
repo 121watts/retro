@@ -1,3 +1,5 @@
+$feels-font: 'Cedarville Cursive', cursive;
+
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -29,7 +31,7 @@ nav.top_bar_color{
   font-size: 6em;
   padding-top: 14%;
   margin-bottom: 0;
-  font-family: 'Cedarville Cursive', cursive;
+  font-family: $feels-font;
 }
 
 .intro_subheadline {
