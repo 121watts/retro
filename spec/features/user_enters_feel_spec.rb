@@ -21,7 +21,7 @@ describe 'User entering feel' do
 
   it 'doesn\'t save if blank' do
     #doesn't fill anything in
-    Date.new
+    Time.new
     click_button 'Create Feel'
     expect(Feel.all).to eq []
   end
@@ -36,5 +36,13 @@ describe 'User entering feel' do
     #doesn't fill anything in
     click_button 'Create Feel'
     expect(page).to have_content('Something went wrong. Please try again.')
+  end
+
+  it 'doesn\'t see feel input_area if already has a feel' do
+    user = FactoryGirl.create(:user)
+    visit feels_path
+    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
+    click_button 'Create Feel'
+    expect(page).to_not have_css('div.feel_input')
   end
 end

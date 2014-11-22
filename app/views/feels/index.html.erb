@@ -8,21 +8,23 @@
   <% end %>
 <% else %>
 
-  <div class='feel_input'>
-    <%= form_for @feel do |f| %>
-      <!-- <%= f.label :body %>: -->
-      <%= f.text_area :body, placeholder: 'reflect on your day...' %><br />
-      <%= f.hidden_field :emoji, :value => 'cool' %>
+  <% unless @feel_for_today %>
+    <div class='feel_input'>
+      <%= form_for @feel do |f| %>
+        <!-- <%= f.label :body %>: -->
+        <%= f.text_area :body, placeholder: 'reflect on your day...' %><br />
+        <%= f.hidden_field :emoji, :value => 'cool' %>
 
-      <!-- <div class="large-6 columns">
-        <label>Select your mood:</label>
-        <input type="radio" name="emoji" value="Sad" id="sad_face"><label for="pokemonRed">Sad</label>
-        <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-      </div> -->
+        <!-- <div class="large-6 columns">
+          <label>Select your mood:</label>
+          <input type="radio" name="emoji" value="Sad" id="sad_face"><label for="pokemonRed">Sad</label>
+          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+        </div> -->
 
-      <%= f.submit %>
-    <% end %>
-  </div>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
 <%end%>
 
 <hr>
