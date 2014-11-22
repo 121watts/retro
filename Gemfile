@@ -18,6 +18,8 @@ gem 'foundation-rails'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'sidekiq'
+gem 'sidekiq-cron'
 
 group :development, :test do
   gem 'pry'

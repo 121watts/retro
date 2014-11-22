@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_update :send_welcome_email
   before_validation :format_phone
   has_many :feels
 
@@ -15,6 +16,10 @@ class User < ActiveRecord::Base
       user.save
     end
   end
+
+ def send_welcome_email
+   WelcomeMailWorker.perform_async(id)
+ end
 
   def self.create_from_omniauth(auth)
     user = User.new

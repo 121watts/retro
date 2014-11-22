@@ -1,6 +1,7 @@
 @import "foundation_and_overrides";
 @import "users";
 @import "pages";
+@import "index";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -20,4 +21,5 @@
 
  */
 
-$feels_button: #7dbbc2
+$feels-button: #7dbbc2;
+$feels-font: 'Cedarville Cursive', cursive;
