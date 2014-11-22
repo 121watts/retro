@@ -1,7 +1,6 @@
 class FeelsController < ApplicationController
   def index
     @user = current_user
-    flash[:notice] = "Im a flash message"
     @feel = Feel.new
     @feels = current_user.feels.all
   end
@@ -9,7 +8,7 @@ class FeelsController < ApplicationController
   def create
     @feel = current_user.feels.new(feel_params)
     if @feel.save
-      flash[:success] = "Your retro has been saved."
+      flash[:notice] = "Your retro has been saved."
       redirect_to feels_path
 
     else

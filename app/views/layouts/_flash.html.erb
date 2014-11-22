@@ -1,0 +1,18 @@
+<% if flash.any? %>
+  <% if flash.notice %>
+    <div data-alert class="alert-box success">
+      <%= notice %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% elsif flash[:error] %>
+    <div data-alert class="alert-box failure">
+      <%= flash[:error] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% elsif flash[:log_out]  %>
+    <div data-alert class="alert-box warning">
+      <%= flash[:log_out] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+<% end %>
