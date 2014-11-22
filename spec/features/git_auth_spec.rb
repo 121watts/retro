@@ -19,23 +19,5 @@ describe 'signing into the service' do
       expect(current_path).to eq root_path
       expect(User.all.count).to eq 0  
     end
-
-
-    it 'it prompts me for email and phone after signing in' do
-      
-    end
-
-    it 'i can enter email and phone' do
-
-    end
-
-    it 'i cannot just enter email' do
-
-    end
-
-    it 'i cannot just enter phone' do
-
-    end
   end
-
 end

@@ -5,18 +5,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update
+    if @user.update(user_params)
       flash[:notice] = "You're all signed up"
       flash[:color] = "valid"
       redirect_to feels_path
     else
-      flash[:notice] = "Form is invalid" 
-      flash[:color] = "invalid"
-      render "new"
+      #flash.keep(:notice)
+      redirect_to feels_path, notice: "Must include email and phone"
     end
   end
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :phone)
   end
 end

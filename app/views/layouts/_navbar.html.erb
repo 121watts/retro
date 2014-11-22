@@ -10,7 +10,11 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a href="#">Sign In</a></li>
+      <%if current_user%>
+        <li class="active"><a href="/signout">Sign Out</a></li>
+      <%else%>
+        <li class="active"><a href="#">Sign In</a></li>
+      <%end%>
       <!-- <li class="has-dropdown">
         <a href="#">Right Button Dropdown</a>
         <ul class="dropdown">
