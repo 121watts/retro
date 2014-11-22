@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
  
  def send_welcome_email
-   MailWorker.perform_async(id)
+   WelcomeMailWorker.perform_async(id)
  end 
 
    
