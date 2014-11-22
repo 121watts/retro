@@ -1,1 +1,15 @@
 <h1>Welcome to tinyRetro</h1>
+
+<%= form_for @feel do |f| %>
+  <!-- <%= f.label :body %>: -->
+  <%= f.text_area :body, placeholder: 'start reflecting on your day...' %><br />
+  <!-- <div class="large-6 columns">
+    <label>Select your mood:</label>
+    <input type="radio" name="emoji" value="Sad" id="sad_face"><label for="pokemonRed">Sad</label>
+    <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+  </div> -->
+
+
+
+  <%= f.submit %>
+<% end %>
