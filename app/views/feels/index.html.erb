@@ -29,7 +29,7 @@
 
 <% if current_user.feels.any? %>
   <% current_user.feels.each do |feel| %>
-    <h1><%= feel.created_at %></h1>
+    <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
     <p><%= feel.body %></p>
   <% end %>
 <% end %>
