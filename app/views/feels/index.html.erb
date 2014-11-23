@@ -1,39 +1,45 @@
 <div class='index_container'>
-  <h1 class ='feels-font'>Turing Feels</h1>
+  <div class="row">
+    <div class='large-12 cloumns' >
+      <h1 class ='feels-font', style="PADDING-TOP: 10px">Input Feels Below...</h1>
 
-  <%if !current_user.has_email_and_phone? %>
-    <%= form_for(@user) do |f| %>
-      <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retro reminders?" %> </p>
-      <p> Phone:</br> <%= f.text_field :phone, placeholder: "Lemme get your digits" %> </p>
-      <%= f.submit :Feel, class: 'button' %>
-    <% end %>
-  <% else %>
+      <%if !current_user.has_email_and_phone? %>
+        <%= form_for(current_user) do |f| %>
+          <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retro reminders?" %> </p>
+          <p> Phone:</br> <%= f.text_field :phone, placeholder: "Lemme get your digits" %> </p>
+          <%= f.submit :Feel, class: 'button' %>
+        <% end %>
+      <% else %>
+        
+          <div class='feel_input'>
+           <div class= 'row'>
+            <%= form_for @feel do |f| %>
+              <!-- <%= f.label :body %>: -->
+              <div class='large-12 columns'>
+                <%= f.text_area :body, placeholder: 'reflect on your day...', rows: '10' %><br />
+              </div>
+            </div>
+              <%= f.hidden_field :emoji, :value => 'cool' %>
 
-    <% unless @feel_for_today %>
-      <div class='feel_input'>
-        <%= form_for @feel do |f| %>
-          <!-- <%= f.label :body %>: -->
-          <%= f.text_area :body, placeholder: 'reflect on your day...' %><br />
-          <%= f.hidden_field :emoji, :value => 'cool' %>
-
-          <!-- <div class="large-6 columns">
+              <!-- <div class="large-6 columns">
             <label>Select your mood:</label>
             <input type="radio" name="emoji" value="Sad" id="sad_face"><label for="pokemonRed">Sad</label>
             <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
           </div> -->
 
-          <%= f.submit %>
+              <%= f.submit :RecordFeel, class: 'button'  %>
+            <% end %>
+          </div>
+      <%end%>
+
+      <hr>
+
+      <% if current_user.feels.any? %>
+        <% current_user.feels.each do |feel| %>
+          <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
+          <p><%= feel.body %></p>
         <% end %>
-      </div>
-    <% end %>
-  <%end%>
-
-  <hr>
-
-  <% if current_user.feels.any? %>
-    <% current_user.feels.each do |feel| %>
-      <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
-      <p><%= feel.body %></p>
-    <% end %>
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
