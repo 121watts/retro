@@ -1,4 +1,6 @@
 class FeelsController < ApplicationController
+  before_action :require_login
+
   def index
     @user = current_user
     @feel = Feel.new
@@ -22,5 +24,12 @@ class FeelsController < ApplicationController
 
   def feel_params
     params.require(:feel).permit(:body, :emoji, :user_id)
+  end
+
+  def require_login
+    unless current_user
+      flash[:error] = "You must log in first."
+      redirect_to root_path
+    end
   end
 end
