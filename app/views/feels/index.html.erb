@@ -1,5 +1,5 @@
 <div class='index_container'>
-    <h1 class ='feels-font'>Turing Feels</h1>
+    <h1 class ='feels-font', style="PADDING-TOP: 10px">Input Feels Below...</h1>
 
   <%if !current_user.has_email_and_phone? %>
     <%= form_for(@user) do |f| %>
@@ -48,20 +48,21 @@
 
             <%= f.radio_button :emoji, '10', :checked => false %>
             <%= image_tag("emoji_10_angry.png", size: "46x40", alt: "Edit Entry") %>
+
+              <%= f.submit :RecordFeel, class: 'button'  %>
+            <% end %>
           </div>
+      <% end %>
+    <% end %>
 
-          <%= f.submit %>
+      <hr>
+
+      <% if current_user.feels.any? %>
+        <% current_user.feels.each do |feel| %>
+          <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
+          <p><%= feel.body %></p>
         <% end %>
-      </div>
-    <% end %>
-  <%end%>
-
-  <hr>
-
-  <% if current_user.feels.any? %>
-    <% current_user.feels.each do |feel| %>
-      <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
-      <p><%= feel.body %></p>
-    <% end %>
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
