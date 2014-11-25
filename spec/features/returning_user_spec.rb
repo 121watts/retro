@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'returning user' do
   before(:each) do
     login_as_returning_user
