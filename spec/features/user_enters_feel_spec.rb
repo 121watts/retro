@@ -45,4 +45,15 @@ describe 'User entering feel' do
     click_button 'Create Feel'
     expect(page).to_not have_css('div.feel_input')
   end
+
+  it 'saves a feel with an emoji value' do
+    user = FactoryGirl.create(:user)
+    visit feels_path
+    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
+    choose 'feel_emoji_5'
+    click_button 'Create Feel'
+    binding.pry
+    expect(user.feels.last.emoji).to eq '5'
+
+  end
 end
