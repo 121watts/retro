@@ -46,14 +46,14 @@
             <%= f.radio_button :emoji, '9', :checked => false %>
             <%= image_tag("emoji_9_surprised.png", size: "46x40", alt: "Edit Entry") %>
 
-            <%= f.radio_button :emoji, '10', :checked => false %>
-            <%= image_tag("emoji_10_angry.png", size: "46x40", alt: "Edit Entry") %>
+            <%= f.radio_button :emoji, '0', :checked => false %>
+            <%= image_tag("emoji_0_angry.png", size: "46x40", alt: "Edit Entry") %>
 
-              <%= f.submit :RecordFeel, class: 'button'  %>
-            <% end %>
+            <%= f.submit :RecordFeel, class: 'button'  %>
+        <% end %>
           </div>
-      <% end %>
     <% end %>
+  <% end %>
 
       <hr>
 
@@ -61,6 +61,8 @@
         <% current_user.feels.each do |feel| %>
           <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
           <p><%= feel.body %></p>
+          <%= image_tag(feel.emoji_img[feel.emoji], size: "46x40") %>
+
         <% end %>
       <% end %>
     </div>
