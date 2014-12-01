@@ -15,7 +15,7 @@ describe User, type: :model do
   it { should allow_value("alice@example.com", "s@e.com").for :email}
   it { should_not allow_value("!@#!@!@%$&*(jo.com", "nil").on(:update).for :email }
 
-  it 'returns true when checking if it has a feel for today with today\'s date' do
+  xit 'returns true when checking if it has a feel for today with today\'s date' do
     feel = FactoryGirl.create(:feel)
     feel.user_id = user.id
     feel.save
@@ -29,7 +29,7 @@ describe User, type: :model do
     feel.user_id = user.id
     feel.created_at = Date.new
     feel.save
-    
+
     expect(user.feel_for_today).to eq false
   end
 end
