@@ -7,8 +7,7 @@ class FeelsController < ApplicationController
     @feel = current_user.feels.new(feel_params)
     if @feel.save
       flash[:notice] = "Your retro has been saved."
-      redirect_to feels_path
-
+      render feels_path
     else
       flash[:error] = "Something went wrong. Please try again."
       redirect_to feels_path
