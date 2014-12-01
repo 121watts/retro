@@ -27,7 +27,7 @@ describe 'User entering feel' do
   it 'gets a flash message if feel is NOT saved' do
     visit current_path
     click_button 'Feel'
-    expect(page).to have_content('Something went wrong. Please try again.')
+    expect(Feel.all).to eq []
   end
 
   #  it 'doesn\'t see feel input_area if already has a feel' do
