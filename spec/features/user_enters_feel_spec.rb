@@ -46,8 +46,20 @@ describe 'User entering feel' do
     expect(page).to have_content('Something went wrong. Please try again.')
   end
 
+  it 'can add multiple retros per day' do
+    visit feels_path
+
+    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
+    choose 'feel_emoji_5'
+    click_button 'Feel'
+    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
+    choose 'feel_emoji_5'
+    click_button 'Feel'
+
+    expect(User.last.feels.count).to eq 2
+  end
+
   it 'saves a feel with an emoji value' do
-    # user = FactoryGirl.create(:user)
     visit feels_path
     fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
     choose 'feel_emoji_5'
