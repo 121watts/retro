@@ -72,8 +72,7 @@ describe 'first time login' do
       fill_in('user[email]', with: "watts@yes.com")
       fill_in('user[phone]', with: "914-420-1223")
       click_button 'Feel'
-      expect(page).to have_content "Email"
-      expect(page).to have_content "Phone"
+      expect(page).to have_content "You're all signed up"
       expect(User.last.email).to eq "watts@yes.com"
       expect(User.last.phone).to eq "9144201223"
       

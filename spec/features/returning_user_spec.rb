@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'returning user' do
   before(:each) do
     login_as_returning_user
@@ -10,8 +12,8 @@ describe 'returning user' do
   end
 
   it 'should be able to logout' do
-    click_on 'Sign Out'
-    expect(page).to_not have_content 'Sign Out'
+    click_on 'sign out'
+    expect(page).to_not have_content 'sign out'
     expect(current_path).to eq root_path
   end
 end
