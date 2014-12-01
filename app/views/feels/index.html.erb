@@ -1,66 +1,68 @@
 <div class='index_container'>
-  <h1 class ='feels-font', style="PADDING-TOP: 10px">Input Feels Below...</h1>
+  <div class="row">
+    <div class"large-12 columns">
+      <h1 class ='feels-font', style="PADDING-TOP: 10px">Input Feels Below...</h1>
 
-  <%if !current_user.has_email_and_phone? %>
-    <%= form_for(@user) do |f| %>
-      <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retro reminders?" %> </p>
-      <p> Phone:</br> <%= f.text_field :phone, placeholder: "Lemme get your digits" %> </p>
-      <%= f.submit :Feel, class: 'button' %>
-    <% end %>
-  <% else %>
+      <%if !current_user.has_email_and_phone? %>
+        <%= form_for(@user) do |f| %>
+          <p> Email:</br> <%= f.text_field :email, placeholder: "where shall we send your retro reminders?" %> </p>
+          <p> Phone:</br> <%= f.text_field :phone, placeholder: "Lemme get your digits" %> </p>
+          <%= f.submit :Feel, class: 'button' %>
+        <% end %>
+      <% else %>
 
-    <div class='feel_input'>
-      <%= form_for @feel do |f| %>
-        <!-- <%= f.label :body %>: -->
-        <%= f.text_area :body, placeholder: 'reflect on your day...' %><br />
-        <!-- <%= f.hidden_field :emoji, :value => 'cool' %> -->
+        <div class='feel_input'>
+          <%= form_for @feel do |f| %>
+            <!-- <%= f.label :body %>: -->
+            <%= f.text_area :body, placeholder: 'reflect on your day...', rows: '10' %><br />
+            <!-- <%= f.hidden_field :emoji, :value => 'cool' %> -->
 
-        <div class="large-10 columns">
-          <label>Select your mood:</label>
+            <div class="large-10 columns">
+              <label>Select your mood:</label>
 
-          <%= f.radio_button :emoji, '1', :checked => false %>
-          <%= image_tag("emoji_1_proud.png", size: "46x40", alt: "Cool as a Cat") %>
+              <%= f.radio_button :emoji, '1', :checked => false %>
+              <%= image_tag("emoji_1_proud.png", size: "46x40", alt: "Cool as a Cat") %>
 
-          <%= f.radio_button :emoji, '2', :checked => false %>
-          <%= image_tag("emoji_2_happy.png", size: "46x40", alt: "Cool as a Cat") %>
+              <%= f.radio_button :emoji, '2', :checked => false %>
+              <%= image_tag("emoji_2_happy.png", size: "46x40", alt: "Cool as a Cat") %>
 
-          <%= f.radio_button :emoji, '3', :checked => false %>
-          <%= image_tag("emoji_3_content.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '3', :checked => false %>
+              <%= image_tag("emoji_3_content.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '4', :checked => false %>
-          <%= image_tag("emoji_4_neutral.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '4', :checked => false %>
+              <%= image_tag("emoji_4_neutral.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '5', :checked => false %>
-          <%= image_tag("emoji_5_anxious.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '5', :checked => false %>
+              <%= image_tag("emoji_5_anxious.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '6', :checked => false %>
-          <%= image_tag("emoji_6_worried.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '6', :checked => false %>
+              <%= image_tag("emoji_6_worried.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '7', :checked => false %>
-          <%= image_tag("emoji_7_oh_shit.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '7', :checked => false %>
+              <%= image_tag("emoji_7_oh_shit.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '8', :checked => false %>
-          <%= image_tag("emoji_8_sad.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '8', :checked => false %>
+              <%= image_tag("emoji_8_sad.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '9', :checked => false %>
-          <%= image_tag("emoji_9_surprised.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '9', :checked => false %>
+              <%= image_tag("emoji_9_surprised.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.radio_button :emoji, '0', :checked => false %>
-          <%= image_tag("emoji_0_angry.png", size: "46x40", alt: "Edit Entry") %>
+              <%= f.radio_button :emoji, '0', :checked => false %>
+              <%= image_tag("emoji_0_angry.png", size: "46x40", alt: "Edit Entry") %>
 
-          <%= f.submit :Feel, class: 'button'  %>
+              <%= f.submit :Feel, class: 'button'  %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if current_user.feels.any? %>
+          <% current_user.feels.each do |feel| %>
+            <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
+            <p><%= feel.body %></p>
+            <%= image_tag(feel.emoji_img[feel.emoji], size: "46x40") %>
+
+          <% end %>
         <% end %>
       </div>
-    <% end %>
-
-  <% if current_user.feels.any? %>
-    <% current_user.feels.each do |feel| %>
-      <h1><%= feel.created_at.strftime("%A, %b %d") %></h1>
-      <p><%= feel.body %></p>
-      <%= image_tag(feel.emoji_img[feel.emoji], size: "46x40") %>
-
-    <% end %>
-  <% end %>
-</div>
+    </div>
   </div>
-</div>
