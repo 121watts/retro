@@ -2,14 +2,13 @@ require 'rails_helper'
 
 describe 'User entering feel' do
   before(:each) do
-    login
-    visit feels_path
+    login_as_returning_user
     fill_in('user[email]', with: "watts@yermahm.com")
     fill_in('user[phone]', with: "3038675309")
     click_button 'Feel'
   end
 
-  it 'can see feel input_area' do
+  it 'can see feel input_area' do 
     expect(page).to have_css('div.feel_input')
   end
 
@@ -21,9 +20,14 @@ describe 'User entering feel' do
   end
 
   it 'doesn\'t save if blank' do
-    #doesn't fill anything in
     Time.new
     choose 'feel_emoji_5'
+    click_button 'Feel'
+    expect(Feel.all).to eq []
+  end
+
+  it 'gets a flash message if feel is NOT saved' do
+    visit current_path
     click_button 'Feel'
     expect(Feel.all).to eq []
   end
@@ -42,15 +46,6 @@ describe 'User entering feel' do
     expect(page).to have_content('Something went wrong. Please try again.')
   end
 
-  xit 'doesn\'t see feel input_area if already has a feel' do
-    # user = FactoryGirl.create(:user)
-    visit feels_path
-    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
-    choose 'feel_emoji_5'
-    click_button 'Feel'
-    expect(page).to_not have_css('div.feel_input')
-  end
-
   it 'saves a feel with an emoji value' do
     # user = FactoryGirl.create(:user)
     visit feels_path
@@ -58,6 +53,5 @@ describe 'User entering feel' do
     choose 'feel_emoji_5'
     click_button 'Feel'
     expect(User.last.feels.last.emoji).to eq '5'
-
   end
 end

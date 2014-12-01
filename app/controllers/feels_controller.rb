@@ -13,7 +13,6 @@ class FeelsController < ApplicationController
     if @feel.save
       flash[:notice] = "Your retro has been saved."
       redirect_to feels_path
-
     else
       flash[:error] = "Something went wrong. Please try again."
       redirect_to feels_path

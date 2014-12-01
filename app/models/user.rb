@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   def format_phone
     if self.phone
-      self.phone.gsub(/[^0-9]/, '')
+      self.phone.gsub!(/\D/, '')
     end
   end
 
