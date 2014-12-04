@@ -1,37 +1,29 @@
 <nav class="top-bar" data-topbar role="navigation">
+<div class="layout-wrap">
   <ul class="title-area">
     <li class="name">
-      <!-- <h1><%= link_to 'feels', root_path %></h1> -->
     </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-        <li class=""><a href="http://today.jumpstartlab.com"><strong>TODAY</strong></a></li>
-        <li class=""><a href="/signin"><strong>HOW IT WORKS</strong></a></li>
+  <!-- Right Nav Section -->
+  <ul class="right">
+    <li><a href="http://today.jumpstartlab.com"><strong>TODAY</strong></a></li>
+    <li><a href="/how"><strong>HOW IT WORKS</strong></a></li>
 
-      <%if current_user%>
-        <li class=""><a href="/signout"><strong>SIGN OUT</strong></a></li>
-      <%else%>
-        <li class=""><a href="/signin"><strong>SIGN IN</strong></a></li>
-      <%end%>
+    <%if current_user%>
+      <li class=""><a href="/signout"><strong>SIGN OUT</strong></a></li>
+    <%else%>
+      <li class=""><a href="/auth/github"><strong>SIGN IN</strong></a></li>
+    <%end%>
+  </ul>
 
-      <!-- <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li> -->
-    </ul>
-
-    <!-- Left Nav Section -->
-    <ul class="left logo">
-      <li><%= link_to  image_tag('turing_logo_white.png', size: "255x77"), "http://turing.io" %></li>
-      <li class="cursive">RETRO </li>
-    </ul>
+  <!-- Left Nav Section -->
+  <ul class="left logo">
+    <li><%= link_to  image_tag('turing_logo_white.png', size: "255x77"), "http://turing.io" %></li>
+  </ul>
   </section>
+</div>
 </nav>

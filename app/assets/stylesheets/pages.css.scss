@@ -8,6 +8,30 @@ $feels-font: 'Cedarville Cursive', cursive;
   margin-left: 400px;
 }
 
+ul.right {
+  margin-right: 400px;
+  margin-top: 22px;
+}
+
+.layout-wrap {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 45px;
+}
+
+.mod-header {
+  margin-top: 35px;
+  float: right;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #262626;
+}
+
+.top-bar-section ul li{
+  background: #262626;
+}
 .centered {
   width: 70%;
   text-align: center;
@@ -16,8 +40,10 @@ $feels-font: 'Cedarville Cursive', cursive;
 }
 
 .welcome_container {
-  background-color: #e6f0eb;
+  background-color: #b0b0b0;
   height: 100%;
+  list-style: none;
+  list-style-type: none;
 }
 
 // nav.top_bar_color{

@@ -4,7 +4,7 @@ class FeelsController < ApplicationController
   def index
     @user = current_user
     @feel = Feel.new
-    @feels = current_user.feels.all
+    @feels = current_user.feels.all.reverse
     @feel_for_today = current_user.feel_for_today
   end
 
