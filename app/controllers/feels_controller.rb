@@ -4,8 +4,8 @@ class FeelsController < ApplicationController
   def index
     @user = current_user
     @feel = Feel.new
-    @feels = current_user.feels.all.reverse
     @feel_for_today = current_user.feel_for_today
+    @feels = current_user.feels.all.order("created_at ASC").paginate(:page => params[:page], per_page: 5)
   end
 
   def create
