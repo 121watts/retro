@@ -20,6 +20,8 @@ gem 'omniauth-github'
 gem 'figaro'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'will_paginate'
+gem 'will_paginate-foundation'
 
 group :development, :test do
   gem 'pry'
@@ -32,10 +34,10 @@ group :test do
   gem "rspec-rails", "~> 3.0.0"
   gem "factory_girl_rails"
   gem "capybara"
-  gem "launchy"  
-end 
+  gem "launchy"
+end
 
-group :development do   
+group :development do
   gem 'spring'
   gem "faker"
   gem "better_errors"
