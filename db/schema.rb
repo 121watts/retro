@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204033121) do
+ActiveRecord::Schema.define(version: 20141204033728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141204033121) do
   create_table "feels", force: true do |t|
     t.text     "body"
     t.string   "user_id"
-    t.string   "emoji"
+    t.string   "emoji",      default: "4"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
