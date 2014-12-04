@@ -4,13 +4,36 @@ $feels-font: 'Cedarville Cursive', cursive;
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.left {
+  margin-left: 400px;
+}
+
+.centered {
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .welcome_container {
   background-color: #e6f0eb;
   height: 100%;
 }
 
-nav.top_bar_color{
-  background-color: #7dbbc2;
+// nav.top_bar_color{
+//   background-color: #7dbbc2;
+// }
+
+nav.top-bar {
+min-height: 143px;
+padding-top: 30px;
+font-size: 12px;
+font-weight: 700;
+font-family: aktiv-grotesk-std, sans-serif;
+text-transform: uppercase;
+color: white;
+background: #262626;
+border-bottom: solid 4px #05c2d1;
 }
 
 // section.top-bar-section li:not(.has-form) a:not(.button) {

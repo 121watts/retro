@@ -8,8 +8,8 @@ describe 'User entering feel' do
     click_button 'Feel'
   end
 
-  it 'can see feel input_area' do 
-    expect(page).to have_css('div.feel_input')
+  it 'can see feel input_area' do
+    expect(page).to have_css('input.retro_input')
   end
 
   it 'can save a feel' do
