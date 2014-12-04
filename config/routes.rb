@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :feels, only: [:index, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
+  get '/how' => 'pages#how'
   get 'signin'  => 'sessions#new'
   get 'signout' => 'sessions#destroy'
   root 'pages#welcome'
