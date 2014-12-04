@@ -8,6 +8,13 @@ $feels-font: 'Cedarville Cursive', cursive;
   margin-left: 400px;
 }
 
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #262626;
+}
+
+.top-bar-section ul li{
+  background: #262626;
+}
 .centered {
   width: 70%;
   text-align: center;
