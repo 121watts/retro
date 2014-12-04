@@ -1,17 +1,20 @@
 $feels-font: 'Cedarville Cursive', cursive;
 
 .welcome_container {
- // background-color: rgba(168, 168, 168, 0.99);
+  background: #b0b0b0;
 }
 body {
-  background-color: #e6f0eb;
-  // background-color: rgba(168, 168, 168, 0.99);
+  background-color: #b0b0b0;
   font-family: Helvetica;
   text-align: center;
 }
 
 .cursive {
   font-family: $feels-font;
+}
+
+.instructions {
+  text-align: left;
 }
 
 .retro_input {

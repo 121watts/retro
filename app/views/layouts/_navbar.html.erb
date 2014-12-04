@@ -11,12 +11,12 @@
   <!-- Right Nav Section -->
   <ul class="right">
     <li><a href="http://today.jumpstartlab.com"><strong>TODAY</strong></a></li>
-    <li><a href="/signin"><strong>HOW IT WORKS</strong></a></li>
+    <li><a href="/how"><strong>HOW IT WORKS</strong></a></li>
 
     <%if current_user%>
       <li class=""><a href="/signout"><strong>SIGN OUT</strong></a></li>
     <%else%>
-      <li class=""><a href="/signin"><strong>SIGN IN</strong></a></li>
+      <li class=""><a href="/auth/github"><strong>SIGN IN</strong></a></li>
     <%end%>
   </ul>
 
