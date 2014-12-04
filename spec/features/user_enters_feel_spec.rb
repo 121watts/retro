@@ -36,7 +36,7 @@ describe 'User entering feel' do
     fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
     choose 'feel_emoji_5'
     click_button 'Feel'
-    expect(page).to have_content('Your retro has been saved.')
+    expect(page).to have_content('Your feel has been saved.')
   end
 
   it 'gets a flash message if feel is NOT saved' do
