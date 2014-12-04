@@ -1,11 +1,31 @@
 $feels-font: 'Cedarville Cursive', cursive;
 
 .welcome_container {
- background-color: rgba(168, 168, 168, 0.99);
+ // background-color: rgba(168, 168, 168, 0.99);
 }
 body {
-  background-color: rgba(168, 168, 168, 0.99);
+  background-color: #e6f0eb;
+  // background-color: rgba(168, 168, 168, 0.99);
   font-family: Helvetica;
+  text-align: center;
+}
+
+.cursive {
+  font-family: $feels-font;
+}
+
+.retro_input {
+  color: #9fc5e8;
+  font-size:2em;
+  // text-align: center;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  margin-top:70px;
+  outline: 0;
+  border: 0;
+  background: #3f454a;
+  padding: 20px;
 }
 
 textarea {

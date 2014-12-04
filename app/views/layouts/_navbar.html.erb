@@ -1,7 +1,7 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><%= link_to 'feels', root_path %></h1>
+      <!-- <h1><%= link_to 'feels', root_path %></h1> -->
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -10,11 +10,15 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
+        <li class=""><a href="http://today.jumpstartlab.com">TODAY</a></li>
+        <li class=""><a href="/signin">HOW IT WORKS</a></li>
+
       <%if current_user%>
-        <li class="active"><a href="/signout">sign out</a></li>
+        <li class=""><a href="/signout">SIGN OUT</a></li>
       <%else%>
-        <li class="active"><a href="/signin">sign in</a></li>
+        <li class=""><a href="/signin">SIGN IN</a></li>
       <%end%>
+
       <!-- <li class="has-dropdown">
         <a href="#">Right Button Dropdown</a>
         <ul class="dropdown">
@@ -25,9 +29,8 @@
     </ul>
 
     <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="http://today.jumpstartlab.com/">today</a></li>
-      <li><a href="#">how it works</a></li>
+    <ul class="left logo">
+      <li><%= link_to  image_tag('turing_logo_white.png', size: "255x77"), "http://turing.io" %></li>
     </ul>
   </section>
 </nav>

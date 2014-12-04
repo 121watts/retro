@@ -3,12 +3,16 @@
   <!-- <div class='intro_paragraph'> -->
     <div class='intro_text'>
       <p class='intro_headline'>
-        all the feels
+        tiny RETRO
       </p>
       <p class='intro_subheadline'>
         reflect. every day.
       </p>
-      <%= link_to 'Sign in with GitHub', '/auth/github/', class: 'button' %>
+      <% if current_user %>
+        <%= link_to 'Record your Retro', feels_path, class: 'button radius round' %>
+      <% else %>
+        <%= link_to 'Sign in with GitHub', '/auth/github/', class: 'button radius round' %>
+      <% end %>
     </div>
   <!-- </div> -->
 </div>
