@@ -3,7 +3,7 @@ class EmailProcessor
     @email = email
   end
 
-  def process(email)
+  def process
     user = User.where(email: @email.from)
     
     Feel.create!({ user_id: user.id, body: @email.body })
