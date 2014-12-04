@@ -19,8 +19,7 @@
             <div class="large-12 columns">
               <!-- <label>Select your mood:</label> -->
 
-              <%= f.radio_button :emoji, '1', :checked => false %>
-              <%= image_tag("emoji_1_proud.png", size: "46x40", alt: "Cool as a Cat") %>
+              <%= f.radio_button(:emoji, '1', :checked => false) + image_tag("emoji_1_proud.png", size: "40x40", alt: "Happy")%>
 
               <%= f.radio_button :emoji, '2', :checked => false %>
               <%= image_tag("emoji_2_happy.png", size: "46x40", alt: "Happy") %>

@@ -1,4 +1,12 @@
 <h1>Your Daily Feels Reminder</h1>
+Simply reply to this email or </br>
 Go here to record your feels
 <%= @url %>
 
+<% if @old_feels.any %>
+    <h4> Here is what you were feeling on this day in the last module:</h4>
+  <%= @old_feels.each do |feel| %>
+    <%= feel.body %></br>
+    ----</br>
+  <% end %>
+<% end %>
