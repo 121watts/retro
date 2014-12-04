@@ -20,6 +20,8 @@ gem 'omniauth-github'
 gem 'figaro'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'griddler'
+gem 'griddler-sendgrid'
 
 group :development, :test do
   gem 'pry'
