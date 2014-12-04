@@ -10,13 +10,13 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-        <li class=""><a href="http://today.jumpstartlab.com">TODAY</a></li>
-        <li class=""><a href="/signin">HOW IT WORKS</a></li>
+        <li class=""><a href="http://today.jumpstartlab.com"><strong>TODAY</strong></a></li>
+        <li class=""><a href="/signin"><strong>HOW IT WORKS</strong></a></li>
 
       <%if current_user%>
-        <li class=""><a href="/signout">SIGN OUT</a></li>
+        <li class=""><a href="/signout"><strong>SIGN OUT</strong></a></li>
       <%else%>
-        <li class=""><a href="/signin">SIGN IN</a></li>
+        <li class=""><a href="/signin"><strong>SIGN IN</strong></a></li>
       <%end%>
 
       <!-- <li class="has-dropdown">
@@ -31,6 +31,7 @@
     <!-- Left Nav Section -->
     <ul class="left logo">
       <li><%= link_to  image_tag('turing_logo_white.png', size: "255x77"), "http://turing.io" %></li>
+      <li class="cursive">RETRO </li>
     </ul>
   </section>
 </nav>
