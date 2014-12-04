@@ -54,4 +54,11 @@ describe 'User entering feel' do
     click_button 'Feel'
     expect(User.last.feels.last.emoji).to eq '5'
   end
+
+  it 'saves a feel without an emoji value (uses default "neutral")' do
+    visit feels_path
+    fill_in('feel[body]', with: "yesterday all my troubles seemed so far away")
+    click_button 'Feel'
+    expect(User.last.feels.last.emoji).to eq '4'
+  end
 end
