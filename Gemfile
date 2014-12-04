@@ -22,6 +22,8 @@ gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'will_paginate'
 gem 'will_paginate-foundation'
+gem 'griddler'
+gem 'griddler-sendgrid'
 
 group :development, :test do
   gem 'pry'
