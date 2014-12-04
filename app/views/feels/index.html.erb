@@ -54,6 +54,9 @@
         <% end %>
 <hr>
         <% if current_user.feels.any? %>
+          <div class="centered">
+            <%= will_paginate @feels, renderer: FoundationPagination::Rails %>
+          </div>
             <% @feels.each do |feel| %>
               <h3><%= feel.created_at.strftime("%A, %b %d") %></h3>
               <%= image_tag(feel.emoji_img[feel.emoji], size: "46x40") %>
